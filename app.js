@@ -15,12 +15,19 @@ $("button").on("click", function() {
     console.log(drinks);
   for (let i = 0; i < drinks.drinks.length; i++) {
     $(".drink-details").append(`<h3>${drinks.drinks[i].strDrink}</h3>`);
+    for (let x = 1; x < 16; x++) {
+      if (`${drinks.drinks[i].strIngredient}${x}` !== ("" || null)) {
+        debugger;
+        $(".drink-details").append(`<p>${drinks.drinks[i].strIngredient}${x}</p>`)
+      }
+    }
   }
 }
+
   
 
 });
-
+// drinks.drinks["0"].strIngredient1
 
 
 
