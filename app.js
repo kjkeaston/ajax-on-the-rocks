@@ -11,10 +11,15 @@ $("button").on("click", function() {
         error: function onError(drinks) {
           console.log("api broke, yo!");}
       });
-    function onSuccess (drinks) {
-        console.log(drinks);
-      }
-    });
+  function onSuccess (drinks) {
+    console.log(drinks);
+  for (let i = 0; i < drinks.drinks.length; i++) {
+    $(".drink-details").append(`<h3>${drinks.drinks[i].strDrink}</h3>`);
+  }
+}
+  
+
+});
 
 
 
