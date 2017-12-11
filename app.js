@@ -17,8 +17,6 @@ $("#cocktail-by-name-btn").on("click", function() {
   for (let i = 0; i < drinks.drinks.length; i++) {
     $(".drink-details").append(`<h3>${drinks.drinks[i].strDrink}</h3>`);
     console.log(`${drinks.drinks[i].strDrink}`);
-    // $(".drink-details").append(`<img src="${drinks.drinks[i].strDrinkThumb}">`);
-
 
     for (let x = 1; x < 16; x++) {
       let key = "strIngredient" + x;
