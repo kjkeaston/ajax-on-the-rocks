@@ -3,6 +3,10 @@ $(document).ready(function () {
 
 
 $("#cocktail-by-name-btn").on("click", function() {
+  // to clear my section each time so I can keep searching w/o refresh
+  let resultClear = $(".drink-details");
+  resultClear.html("");
+  
   let whatISearched = $("#cocktail-by-name").val();
   $.ajax({
         method: "GET",
@@ -32,11 +36,12 @@ $("#cocktail-by-name-btn").on("click", function() {
 });
 //
 //
-//.drinks["0"].strMeasure1
+//
 //
 // 
-// 
+// ***
 // random cocktail code
+// ***
 $("#random-cocktail-btn").on("click", function() {
   $.ajax({
         method: "GET",
