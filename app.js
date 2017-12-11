@@ -2,8 +2,8 @@ $(document).ready(function () {
   console.log("js up and running!!");
 
 
-$("button").on("click", function() {
-  let whatISearched = $("input").val();
+$("#cocktail-by-name-btn").on("click", function() {
+  let whatISearched = $("#cocktail-by-name").val();
   $.ajax({
         method: "GET",
         url: "http://www.thecocktaildb.com/api/json/v1/1/search.php?s=" + whatISearched,
@@ -30,13 +30,38 @@ $("button").on("click", function() {
     $(".drink-details").append(`<img src="${drinks.drinks[i].strDrinkThumb}"><h5>Instructions</h5><p class="instructions">${drinks.drinks[i].strInstructions}</p>`)
   }
 }
-
-
 });
-// drinks.drinks["0"].strIngredient1
+//
+//
+//
+//
+// 
+// 
+// random cocktail code
+$("#random-cocktail-btn").on("click", function() {
+  $.ajax({
+        method: "GET",
+        url: "http://www.thecocktaildb.com/api/json/v1/1/random.php",
+        success: onSuccess,
+        error: function onError(drinks) {
+          console.log("api broke, yo!");}
+      });
 
-// url for searching by ingredient- http://www.thecocktaildb.com/api/json/v1/1/search.php?i=vodka
+  function onSuccess (drinks) {
+    console.log(drinks);
+    $(".drink-details").html(`<h3>${drinks.drinks[0].strDrink}</h3>`);
+    console.log(`${drinks.drinks[0].strDrink}`);
 
+    for (let x = 1; x < 16; x++) {
+      let key = "strIngredient" + x;
+      if (drinks.drinks[0][key]) {
+        console.log(drinks.drinks[0][key]);
+        $(".drink-details").append(`<p>${x}. ${drinks.drinks[0][key]}</p>`);
+      }
+    }
+    $(".drink-details").append(`<img src="${drinks.drinks[0].strDrinkThumb}"><h5>Instructions</h5><p class="instructions">${drinks.drinks[0].strInstructions}</p>`)
+  }
+});
 
 
 
