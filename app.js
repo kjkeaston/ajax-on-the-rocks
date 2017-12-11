@@ -6,7 +6,7 @@ $("#cocktail-by-name-btn").on("click", function() {
   let whatISearched = $("#cocktail-by-name").val();
   $.ajax({
         method: "GET",
-        url: "http://www.thecocktaildb.com/api/json/v1/1/search.php?s=" + whatISearched,
+        url: "https://www.thecocktaildb.com/api/json/v1/1/search.php?s=" + whatISearched,
         success: onSuccess,
         error: function onError(drinks) {
           console.log("api broke, yo!");}
@@ -39,7 +39,7 @@ $("#cocktail-by-name-btn").on("click", function() {
 $("#random-cocktail-btn").on("click", function() {
   $.ajax({
         method: "GET",
-        url: "http://www.thecocktaildb.com/api/json/v1/1/random.php",
+        url: "https://www.thecocktaildb.com/api/json/v1/1/random.php",
         success: onSuccess,
         error: function onError(drinks) {
           console.log("api broke, yo!");}
