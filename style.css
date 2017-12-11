@@ -1,5 +1,6 @@
 h4 {
   margin-bottom: 30px;
+  font-style: oblique;
 }
 
 p {
@@ -7,5 +8,21 @@ p {
 }
 
 h3 {
-  margin-top: 20px;
+  margin-top: 30px;
+}
+
+.instructions {
+  font-style: italic;
+  border-bottom: solid grey 2px;
+  padding-bottom: 10px;
+}
+
+h5 {
+  margin: 10px 0px 0px 0px;
+}
+
+img {
+  height: 200px;
+  width: 200px;
+  border-radius: 20px;
 }
